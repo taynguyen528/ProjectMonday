@@ -1,10 +1,12 @@
-import { Routes, Route } from 'react-router-dom';
+import { Routes, Route } from "react-router-dom";
+import SignUp from "./pages/SignUp";
 function App() {
-  return (
-    <>
-      <Routes></Routes>
-    </>
-  );
+    return (
+        <>
+            <SignUp></SignUp>
+            <Routes></Routes>
+        </>
+    );
 }
 
 export default App;

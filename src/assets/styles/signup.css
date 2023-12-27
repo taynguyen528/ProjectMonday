@@ -1,0 +1,132 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap");
+
+body {
+    font-family: "Poppins", sans-serif;
+}
+
+h1 {
+    font-size: 32px;
+    color: #000;
+    font-weight: 500;
+}
+
+h2 {
+    font-size: 16px;
+    color: #000;
+    font-weight: 400;
+}
+
+.signup {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.signup__content {
+    width: 60%;
+}
+
+.signup__title {
+    text-align: center;
+}
+
+.signup__img img {
+    height: 100vh;
+}
+
+.signup__google {
+    text-align: center;
+}
+
+.google-login-button {
+    width: 400px;
+    background-color: #fff;
+    color: #333;
+    border: 1px solid #c3c6d4;
+    border-radius: 4px;
+    padding: 10px 15px;
+    font-size: 20px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 400;
+    margin: 50px auto 0;
+    transition: 0.5s all;
+}
+
+.google-login-button:hover {
+    background-color: #dcdfec;
+}
+
+.google-icon {
+    width: 30px;
+    height: 30px;
+    margin-right: 10px;
+}
+
+.separate {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 15px 0;
+}
+
+.separate__hori {
+    width: 180px;
+    height: 1px;
+    background-color: black;
+}
+
+.separate__text {
+    margin: 0 10px;
+    color: black;
+    font-weight: 500;
+}
+
+.email {
+    border: 1px solid #c3c6d4;
+    width: 400px;
+    border-radius: 4px;
+    padding: 10px 15px;
+    outline: none;
+    display: block;
+    margin: 0 auto;
+}
+
+
+form .btn-continue {
+    margin-top: 20px;
+    background-color: #0073ea;
+    width: 400px;
+    padding: 10px 15px;
+    border-radius: 4px;
+    transition: 0.5s all;
+    margin: 20px auto 0;
+    display: block;
+    color: #fff;
+}
+
+form .btn-continue:hover {
+    background-color: #0060b9;
+}
+
+.backLogin,
+.sign__note {
+    width: 400px;
+    margin: 20px auto 0;
+    text-align: center;
+}
+.backLogin a,
+.sign__note a {
+    color: #0073ea;
+}
+
+.backLogin a:hover,
+.sign__note a:hover {
+    text-decoration: underline;
+}
+
+.backLogin {
+    margin-top: 200px;
+}
