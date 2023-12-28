@@ -1,8 +1,6 @@
 import "../assets/styles/signup.css";
 import imgSignup from "../assets/img/img-signup.png";
 import icGoogle from "../assets/img/ic-google.png";
-import hidePass from "../assets/img/hide_password.png";
-import { Button } from "antd";
 
 function SignUp() {
     return (

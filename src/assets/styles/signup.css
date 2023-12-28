@@ -1,5 +1,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap");
 
+@import "@fortawesome/fontawesome-free/css/all.css";
+
 body {
     font-family: "Poppins", sans-serif;
 }
@@ -94,7 +96,6 @@ h2 {
     margin: 0 auto;
 }
 
-
 form .btn-continue {
     margin-top: 20px;
     background-color: #0073ea;
@@ -129,4 +130,66 @@ form .btn-continue:hover {
 
 .backLogin {
     margin-top: 200px;
+}
+
+/* Create your account */
+.createAccount {
+    display: flex;
+    justify-content: space-between;
+}
+
+.info {
+    width: 60%;
+}
+
+.createAccount form input {
+    width: 750px;
+    padding: 15px 15px;
+    outline: none;
+    border: 1px solid #c3c6d4;
+    border-radius: 4px;
+}
+
+.createAccount form input {
+    margin-bottom: 30px;
+    margin-top: 10px;
+}
+.createAccount form label {
+    color: #323338;
+}
+
+.createAccount .info h2 {
+    color: #323338;
+    font-size: 32px;
+    font-weight: 500;
+    margin: 60px 0 30px 0;
+}
+
+.createAccount .info img {
+    font-size: 30px;
+}
+
+.info__wrap {
+    position: relative;
+    width: 750px;
+    margin: 0 auto;
+    margin-top: 100px;
+}
+
+.act_btn {
+    position: absolute;
+    display: inline-flex;
+    gap: 10px;
+    align-items: center;
+    color: #fff;
+    background-color: #0073ea;
+    padding: 10px 25px;
+    border-radius: 4px;
+    transition: 0.5s all;
+    right: 0;
+    bottom: -200px;
+}
+
+.act_btn:hover {
+    background-color: #0060b9;
 }
