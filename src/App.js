@@ -1,9 +1,10 @@
 import { Routes, Route } from "react-router-dom";
 import SignUp from "./pages/SignUp";
+import CreateAccount from "./pages/CreateAccount";
 function App() {
     return (
         <>
-            <SignUp></SignUp>
+            <CreateAccount></CreateAccount>
             <Routes></Routes>
         </>
     );
