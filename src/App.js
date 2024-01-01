@@ -2,10 +2,11 @@ import { Routes, Route } from "react-router-dom";
 import SignUp from "./pages/SignUp";
 import CreateAccount from "./pages/CreateAccount";
 import Question from "./pages/Question";
+import LastQuestion from "./pages/LastQuestion";
 function App() {
     return (
         <>
-            <Question></Question>
+            <LastQuestion></LastQuestion>
             <Routes></Routes>
         </>
     );

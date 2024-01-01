@@ -299,6 +299,27 @@ input[type="radio"]:checked + label:after {
     bottom: 100px;
 }
 
+.btn_back {
+    position: absolute;
+    margin-top: 20px;
+    display: inline-flex;
+    gap: 10px;
+    align-items: center;
+    color: #fff;
+    background-color: #fff;
+    padding: 10px 25px;
+    border-radius: 4px;
+    transition: 0.5s all;
+    bottom: 100px;
+    color: #323338;
+    border: 1px solid #c3c6d4;
+}
+
+.btn_back:hover {
+    background-color: #dcdfec;
+    cursor: pointer;
+}
+
 .btn_continue:hover {
     background-color: #0060b9;
     cursor: pointer;
@@ -306,4 +327,37 @@ input[type="radio"]:checked + label:after {
 
 .question__wrap img {
     margin-bottom: 100px;
+}
+input[type="checkbox"] {
+    appearance: none;
+    width: 20px;
+    height: 20px;
+    border: 2px solid #ccc;
+    border-radius: 4px;
+    background-color: #fff;
+    outline: none;
+    cursor: pointer;
+    position: relative;
+}
+
+input[type="checkbox"]:checked {
+    background-color: #0073ea;
+    border-color: #0073ea;
+}
+
+input[type="checkbox"]::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) rotate(45deg);
+    width: 5px;
+    height: 10px;
+    border: solid #fff;
+    border-width: 0 2px 2px 0;
+    opacity: 0;
+}
+
+input[type="checkbox"]:checked::before {
+    opacity: 1;
 }
