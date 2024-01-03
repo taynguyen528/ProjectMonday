@@ -20,12 +20,32 @@ h2 {
 
 .signup {
     display: flex;
-    justify-content: space-between;
     align-items: center;
 }
 
 .signup__content {
     width: 60%;
+    margin: 0 auto;
+}
+
+.signup__img img {
+    width: 100%;
+    height: auto;
+    max-width: 100%;
+    display: block;
+}
+
+.google-login-button,
+.email,
+form .btn-continue,
+.backLogin,
+.sign__note {
+    width: 100%;
+    max-width: 400px;
+    margin: 10px auto;
+}
+
+.signup__content {
 }
 
 .signup__title {

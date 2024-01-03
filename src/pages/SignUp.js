@@ -1,4 +1,5 @@
 import "../assets/styles/signup.css";
+// import "../assets/styles/responsive.css";
 import imgSignup from "../assets/img/img-signup.png";
 import icGoogle from "../assets/img/ic-google.png";
 
