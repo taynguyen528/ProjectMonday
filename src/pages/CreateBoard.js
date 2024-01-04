@@ -1,15 +1,32 @@
 import { name } from "tar/lib/types";
 import imgLogo from "../assets/img/logoMonday.png";
 import "../assets/styles/CreateBoard.css";
+import { React, useState } from "react";
 
 function CreateBoard() {
-    const handleInputChange = () => {
+    const handleBoardNameChange = () => {
         const inputElement = document.getElementById("nameBoard");
         const nextButton = document.querySelector(".btn-next button");
+        const lineMain = document.querySelector(".line.main");
+
         if (inputElement.value !== "") {
             nextButton.removeAttribute("disabled");
+            lineMain.innerText = inputElement.value;
+            lineMain.style.height = "auto";
+            lineMain.style.margin = "0 0 0 32px";
+            lineMain.style.background = "transparent";
+            lineMain.style.color = "#676879";
+            lineMain.style.fontSize = "32px";
+            lineMain.style.width = "100%";
         } else {
             nextButton.setAttribute("disabled", true);
+            lineMain.innerText = "";
+            lineMain.style.height = "8px";
+            lineMain.style.margin = "12px 0px 70px 32px";
+            lineMain.style.background = "#c3c6d4"; // Reset màu background
+            lineMain.style.color = ""; // Reset màu chữ
+            lineMain.style.fontSize = ""; // Reset font size
+            lineMain.style.width = ""; // Reset width
         }
     };
 
@@ -31,7 +48,7 @@ function CreateBoard() {
                             placeholder="My first board"
                             id="nameBoard"
                             required
-                            onChange={handleInputChange}
+                            onChange={handleBoardNameChange}
                         ></input>
                         <div className="note">
                             In monday.com, "boards" are the place where all your
