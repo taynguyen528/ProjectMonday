@@ -1,0 +1,215 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap");
+
+@import "@fortawesome/fontawesome-free/css/all.css";
+
+body {
+    font-family: "Poppins", sans-serif;
+}
+
+h1 {
+    font-size: 32px;
+    color: #000;
+    font-weight: 500;
+}
+
+h2 {
+    font-size: 16px;
+    color: #000;
+    font-weight: 400;
+}
+
+.createBoardWrap {
+    display: flex;
+    justify-content: space-between;
+}
+
+.createBoardContent {
+    max-width: 50%;
+    width: 440px;
+    height: 510px;
+    margin: auto;
+}
+
+.createBoardTitle h1 {
+    margin-top: 70px;
+    margin-bottom: 30px;
+}
+
+.createBoardTitle h2 {
+    margin-bottom: 20px;
+}
+
+.createBoardContent input {
+    padding: 10px 20px;
+    width: 440px;
+    outline: none;
+    border: 2px solid #c3c6d4;
+    border-radius: 4px;
+    margin-bottom: 50px;
+}
+
+.createBoardContent input:focus {
+    border-color: #0073ea;
+}
+
+.createBoardContent .note {
+    background-color: #f6f7fb;
+    padding: 15px 40px 15px 20px;
+    border-radius: 8px;
+}
+
+.next {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-left: 340px;
+    margin-top: 50px;
+    padding: 10px 20px;
+    background-color: #ecedf5;
+    border-radius: 4px;
+    color: #c3c6d4;
+}
+.next:disabled {
+    cursor: not-allowed;
+}
+
+.next:enabled {
+    background-color: #0073ea;
+    color: #fff;
+}
+
+.btn-next:hover {
+    cursor: pointer;
+}
+
+.overlayCreateBoard {
+    height: 100vh;
+    width: 50%;
+}
+
+.overlay {
+    position: relative;
+    background-color: #f6f7fb;
+    border-radius: 10px;
+    height: calc(100% - 10px);
+    margin-top: 5px;
+    width: calc(100% - 10px);
+}
+
+.overlayWrap button i {
+    position: absolute;
+    font-size: 24px;
+    padding: 10px;
+    right: 0;
+}
+
+.board {
+    height: 550px;
+    background: #fff;
+    box-shadow: 0px 4px 6px -4px rgba(0, 0, 0, 0.1);
+    box-sizing: initial;
+    display: flex;
+    filter: drop-shadow(-10px 10px 30px rgba(29, 140, 242, 0.3));
+    flex-direction: column;
+    overflow-y: auto;
+    padding-top: 32px;
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    transition: transform 0.2s ease-in-out;
+    width: 90%;
+}
+
+.line {
+    width: 30%;
+    background: #c3c6d4;
+    border-radius: 8px;
+}
+.line.main {
+    height: 8px;
+    margin: 12px 0px;
+    margin-left: 32px;
+    margin-bottom: 70px;
+}
+
+.table {
+    overflow: auto;
+    margin-left: 32px;
+}
+
+.tableWrap {
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+}
+.tableWrap .colTable {
+    border-bottom-left-radius: 8px;
+    border-color: #d0d4e4;
+    display: grid;
+    grid-template-columns:
+        170px minmax(auto, 200px) minmax(auto, 200px) minmax(auto, 200px)
+        auto;
+    gap: 0;
+    grid-auto-rows: auto;
+    justify-items: center;
+}
+
+.colSubTable {
+    align-items: center;
+    display: flex;
+    height: 36px;
+    width: 100%;
+}
+
+.colSubTable.col-start {
+    justify-content: start;
+}
+
+.tableWrap .colTable .col-mb-table {
+    margin-bottom: 8px;
+}
+
+.colSubTable.col-separate {
+    border-left: 1px solid;
+    border-top: 1px solid;
+    border-color: #d0d4e4;
+    border-bottom-color: #d0d4e4 !important;
+    font-size: 14px;
+}
+
+.colSubTable .col-height.MY8RW {
+    width: 70%;
+}
+
+.colSubTable .col-height.col-height-2 {
+    height: 4px;
+}
+
+.colSubTable .col-height {
+    background: #c3c6d4;
+    border-radius: 8px;
+}
+
+.colSubTable .col-height.Gu2z9 {
+    height: 6px;
+}
+
+.colSubTable .col-height.col-width {
+    width: 30%;
+}
+
+.colSubTable.col-center {
+    justify-content: center;
+}
+
+.colSubTable.col-start {
+    justify-content: start;
+}
+
+.colSubTable .col-plus {
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    margin: 0 12px;
+}
