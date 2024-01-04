@@ -4,12 +4,11 @@ import CreateAccount from "./pages/CreateAccount";
 import Question from "./pages/Question";
 import LastQuestion from "./pages/LastQuestion";
 import InviteMember from "./pages/InviteMember";
-
-
+import CreateBoard from "./pages/CreateBoard";
 function App() {
     return (
         <>
-            <InviteMember></InviteMember>
+            <CreateBoard></CreateBoard>
             <Routes></Routes>
         </>
     );
