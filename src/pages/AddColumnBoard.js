@@ -41,23 +41,36 @@ function AddColumnBoard() {
     }
 
     const handleButtonClick = (buttonName) => {
-        const activeButtonsCount = Object.values(buttonStates).filter(
-            (state) => state
-        ).length;
+        const activeButtons = Object.keys(buttonStates).filter(
+            (btn) => buttonStates[btn]
+        );
 
-        if (activeButtonsCount === 1 && buttonStates[buttonName]) {
+        if (activeButtons.length === 1 && buttonStates[buttonName]) {
             return;
         }
 
-        setButtonStates({
+        const newButtonStates = {
             ...buttonStates,
             [buttonName]: !buttonStates[buttonName],
-        });
+        };
+
+        setButtonStates(newButtonStates);
 
         const content = getContentForButton(buttonName);
         const explainElement = document.querySelector(".explain");
-        explainElement.textContent = content;
-        explainElement.style.display = "block"; 
+
+        if (newButtonStates[buttonName]) {
+            explainElement.textContent = content;
+            explainElement.style.display = "block";
+        } else {
+            const nearestActiveButton = activeButtons
+                .reverse()
+                .find((btn) => newButtonStates[btn]);
+            const activeContent = getContentForButton(nearestActiveButton);
+
+            explainElement.textContent = activeContent;
+            explainElement.style.display = "block";
+        }
     };
 
     return (
