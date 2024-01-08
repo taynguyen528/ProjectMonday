@@ -5,10 +5,11 @@ import Question from "./pages/Question";
 import LastQuestion from "./pages/LastQuestion";
 import InviteMember from "./pages/InviteMember";
 import CreateBoard from "./pages/CreateBoard";
+import AddColumnBoard from "./pages/AddColumnBoard";
 function App() {
     return (
         <>
-            <CreateBoard></CreateBoard>
+            <AddColumnBoard></AddColumnBoard>
             <Routes></Routes>
         </>
     );

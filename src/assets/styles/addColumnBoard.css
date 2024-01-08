@@ -1,0 +1,127 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap");
+
+@import "@fortawesome/fontawesome-free/css/all.css";
+
+body {
+    font-family: "Poppins", sans-serif;
+}
+
+h1 {
+    font-size: 32px;
+    color: #000;
+    font-weight: 500;
+}
+
+h2 {
+    font-size: 16px;
+    color: #000;
+    font-weight: 400;
+}
+
+.addColumnBoardPage {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.addColumnContent {
+    max-width: 50%;
+    margin: auto;
+    width: 600px;
+}
+
+.addColumnTitle h1 {
+    margin-top: 70px;
+    margin-bottom: 30px;
+}
+
+.addColumnTitle h2 {
+    margin-bottom: 20px;
+}
+
+.groupButton {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.groupButton button {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 10px 20px;
+    border: 2px solid #c3c6d4;
+    border-radius: 4px;
+    transition: 0.5s all;
+}
+.groupButton button.active {
+    border-color: #0073ea;
+}
+
+.groupButton button:not(.active) {
+    border-color: #c3c6d4;
+}
+.groupButton button:hover {
+    background-color: #dcdfec;
+}
+.wrapSVG {
+    padding: 5px;
+    border-radius: 4px;
+}
+
+.back,
+.btn-next {
+    display: inline-flex;
+    gap: 10px;
+    align-items: center;
+}
+
+.groupBtnAct {
+    margin-top: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.back {
+    background-color: #fff;
+    padding: 10px 25px;
+    border-radius: 4px;
+    transition: 0.5s all;
+    bottom: 100px;
+    color: #323338;
+    border: 1px solid #c3c6d4;
+}
+.back:hover {
+    background-color: #dcdfec;
+}
+
+.btn-next {
+    background-color: #0073ea;
+    padding: 10px 25px;
+    border-radius: 4px;
+    transition: 0.5s all;
+    bottom: 100px;
+    color: #323338;
+    border: 1px solid #c3c6d4;
+}
+
+.btn-next:hover {
+    background-color: #0060b9;
+}
+
+.groupBtnAct .btn-next {
+    color: #fff;
+}
+
+.explain {
+    width: 100%;
+    border-radius: 4px;
+    background-color: #f6f7fb;
+    margin: 20px 0;
+    padding: 15px 20px;
+}
+
+.explain {
+    display: none;
+}

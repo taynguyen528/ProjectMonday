@@ -1,4 +1,3 @@
-import { name } from "tar/lib/types";
 import imgLogo from "../assets/img/logoMonday.png";
 import "../assets/styles/CreateBoard.css";
 import { React, useState } from "react";
@@ -23,10 +22,10 @@ function CreateBoard() {
             lineMain.innerText = "";
             lineMain.style.height = "8px";
             lineMain.style.margin = "12px 0px 70px 32px";
-            lineMain.style.background = "#c3c6d4"; // Reset màu background
-            lineMain.style.color = ""; // Reset màu chữ
-            lineMain.style.fontSize = ""; // Reset font size
-            lineMain.style.width = ""; // Reset width
+            lineMain.style.background = "#c3c6d4";
+            lineMain.style.color = "";
+            lineMain.style.fontSize = "";
+            lineMain.style.width = "";
         }
     };
 
