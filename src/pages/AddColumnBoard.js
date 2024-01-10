@@ -73,6 +73,72 @@ function AddColumnBoard() {
         }
     };
 
+    // Trạng thái ban đầu
+    const initialButtonState = [
+        true, // Owner
+        true, // Status
+        true, // Due date
+        false, // Timeline
+        false, // Priority
+        false, // File Budget
+        false, // Notes
+        false, // Last Update
+    ];
+
+    const initialButtonNames = [
+        "Owner",
+        "Status",
+        "Due date",
+        "Timeline",
+        "Priority",
+        "File Budget",
+        "Notes",
+        "Last Update",
+    ];
+
+    const [activeButtonsColumn, setActiveButtonsColumn] =
+        useState(initialButtonState);
+    const [buttonNames, setButtonNames] = useState(initialButtonNames);
+
+    const handleButtonClickColumns = (index) => {
+        const updatedButtons = activeButtonsColumn.map((btn, i) =>
+            i === index ? !btn : btn
+        );
+        setActiveButtonsColumn(updatedButtons);
+
+        const updatedNames = [...buttonNames];
+        updatedNames[index] = updatedButtons[index]
+            ? buttonNames[index]
+            : initialButtonNames[index];
+        setButtonNames(updatedNames);
+    };
+
+    const renderButtonNames = () => {
+        return buttonNames.map((name, index) => (
+            <button key={index} onClick={() => handleButtonClickColumns(index)}>
+                {name}
+            </button>
+        ));
+    };
+
+    const renderDivs = () => {
+        const activeColumns = buttonNames.filter(
+            (name, index) => activeButtonsColumn[index]
+        );
+
+        return activeColumns.map((name, index) => (
+            <div
+                key={index}
+                className={`col-height MY8RW col-height-2 colSubTable col-separate col-center`}
+                style={{
+                    gridColumn: `${index + 2}`,
+                }}
+            >
+                {name}
+            </div>
+        ));
+    };
+
     return (
         <>
             <div className="addColumnBoardPage">
@@ -382,7 +448,8 @@ function AddColumnBoard() {
                                                 >
                                                     <div className="col-height MY8RW col-height-2"></div>
                                                 </div>
-                                                <div
+                                                {renderDivs()}
+                                                {/* <div
                                                     className="colSubTable col-separate col-center"
                                                     style={{
                                                         gridColumn: "2",
@@ -405,7 +472,7 @@ function AddColumnBoard() {
                                                     }}
                                                 >
                                                     <div className="col-height col-width col-height-2"></div>
-                                                </div>
+                                                </div> */}
                                                 <div
                                                     className="colSubTable col-separate col-start"
                                                     style={{
