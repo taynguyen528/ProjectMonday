@@ -5,7 +5,7 @@ import { React, useState } from "react";
 function CreateBoard() {
     const handleBoardNameChange = () => {
         const inputElement = document.getElementById("nameBoard");
-        const nextButton = document.querySelector(".btn-next button");
+        const nextButton = document.querySelector(".btn__next button");
         const lineMain = document.querySelector(".line.main");
 
         if (inputElement.value !== "") {
@@ -53,7 +53,7 @@ function CreateBoard() {
                             In monday.com, "boards" are the place where all your
                             content lives
                         </div>
-                        <div className="btn-next">
+                        <div className="btn__next">
                             <button className="next" disabled>
                                 Next
                                 <i className="fa-solid fa-chevron-right"></i>

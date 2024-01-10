@@ -78,7 +78,7 @@ h2 {
     color: #fff;
 }
 
-.btn-next:hover {
+.btn__next:hover {
     cursor: pointer;
 }
 
@@ -133,7 +133,7 @@ h2 {
     margin-bottom: 70px;
 }
 
-.table { 
+.table {
     overflow: auto;
     margin-left: 32px;
 }
@@ -212,4 +212,12 @@ h2 {
     display: flex;
     justify-content: center;
     margin: 0 12px;
+}
+
+.active-column {
+    display: block;
+}
+
+.active-column.inactive {
+    display: none;
 }
