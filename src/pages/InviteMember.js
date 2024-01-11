@@ -1,15 +1,17 @@
 import "../assets/styles/inviteMember.css";
 import imgLogo from "../assets/img/logoMonday.png";
 import imgInvite from "../assets/img/invite_member.png";
-import { useState } from "react";
-import React from "react";
+import { React, useState } from "react";
+import { Select, Space } from "antd";
 function InviteMember() {
     const [formCount, setFormCount] = useState(1);
 
     const handleAddAnotherClick = () => {
         setFormCount(formCount + 1);
     };
-
+    const handleChange = (value) => {
+        console.log(`selected ${value}`);
+    };
     const renderForms = () => {
         let forms = [];
         for (let i = 0; i < formCount; i++) {
@@ -22,14 +24,25 @@ function InviteMember() {
                         placeholder="Add email here"
                         required
                     ></input>
-                    <select id={`role-${i}`} name={`role-${i}`}>
-                        <option value="admin" title="">
-                            Admin (Can invite & manage new users)
-                        </option>
-                        <option value="member">
-                            Member (Can add and edit content)
-                        </option>
-                    </select>
+                    <Space wrap>
+                        <Select
+                            defaultValue="ADMIN"
+                            style={{
+                                width: 250,
+                            }}
+                            onChange={handleChange}
+                            options={[
+                                {
+                                    value: "Admin",
+                                    label: "Admin (Can invite & manage new users)",
+                                },
+                                {
+                                    value: "Member",
+                                    label: "Member (Can add and edit content)",
+                                },
+                            ]}
+                        />
+                    </Space>
                 </form>
             );
         }
@@ -57,32 +70,27 @@ function InviteMember() {
                                     placeholder="Add email here"
                                     required
                                 ></input>
-                                <select id="role" name="role">
-                                    <option value="admin" title="">
-                                        Admin (Can invite & manage new users)
-                                    </option>
-                                    <option value="member">
-                                        Member (Can add and edit content)
-                                    </option>
-                                </select>
+                                <Space wrap>
+                                    <Select
+                                        defaultValue="ADMIN"
+                                        style={{
+                                            width: 150,
+                                        }}
+                                        onChange={handleChange}
+                                        options={[
+                                            {
+                                                value: "Admin",
+                                                label: "Admin (Can invite & manage new users)",
+                                            },
+                                            {
+                                                value: "Member",
+                                                label: "Member (Can add and edit content)",
+                                            },
+                                        ]}
+                                    />
+                                </Space>
                             </form>
-                            {/* <form className="infoMember">
-                                <input
-                                    type="email"
-                                    id="email"
-                                    name="email"
-                                    placeholder="Add email here"
-                                    required
-                                ></input>
-                                <select id="role" name="role">
-                                    <option value="admin">
-                                        Admin (Can invite & manage new users)
-                                    </option>
-                                    <option value="member">
-                                        Member (Can add and edit content)
-                                    </option>
-                                </select>
-                            </form> */}
+
                             {renderForms()}
                         </div>
                         <button

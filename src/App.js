@@ -6,10 +6,11 @@ import LastQuestion from "./pages/LastQuestion";
 import InviteMember from "./pages/InviteMember";
 import CreateBoard from "./pages/CreateBoard";
 import AddColumnBoard from "./pages/AddColumnBoard";
+import test from "./pages/test";
 function App() {
     return (
         <>
-            <AddColumnBoard></AddColumnBoard>
+            <InviteMember></InviteMember>
             <Routes></Routes>
         </>
     );
