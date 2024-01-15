@@ -3,20 +3,71 @@ import imgLogo from "../assets/img/logoMonday.png";
 import imgInvite from "../assets/img/invite_member.png";
 import { React, useState } from "react";
 import { Select, Space } from "antd";
+
 function InviteMember() {
     const [formCount, setFormCount] = useState(1);
 
     const handleAddAnotherClick = () => {
         setFormCount(formCount + 1);
     };
+
     const handleChange = (value) => {
         console.log(`selected ${value}`);
     };
+    const { Option } = Select;
+
+    const CustomSelect = ({ defaultValue, options, onChange }) => {
+        const handleChange = (value, option) => {
+            console.log(value);
+            if (onChange) {
+                onChange(value);
+            }
+        };
+
+        return (
+            <Select
+                defaultValue={defaultValue}
+                style={{
+                    width: 200,
+                    height: "56px",
+                }}
+                onChange={handleChange}
+                labelInValue
+            >
+                {options.map((option) => (
+                    <Option key={option.value} value={option.value}>
+                        <div>{option.value}</div>
+                        <div
+                            style={{
+                                fontSize: "14px",
+                                color: "#999",
+                                display: "block",
+                            }}
+                        >
+                            {option.label}
+                        </div>
+                    </Option>
+                ))}
+            </Select>
+        );
+    };
+
+    const options = [
+        {
+            value: "Admin",
+            label: "Can invite & manage new users",
+        },
+        {
+            value: "Member",
+            label: "Can add and edit content",
+        },
+    ];
+
     const renderForms = () => {
         let forms = [];
         for (let i = 0; i < formCount; i++) {
             forms.push(
-                <form className="infoMember" key={i}>
+                <form className="infoMember" key={`form-${i}`}>
                     <input
                         type="email"
                         id={`email-${i}`}
@@ -25,22 +76,10 @@ function InviteMember() {
                         required
                     ></input>
                     <Space wrap>
-                        <Select
+                        <CustomSelect
                             defaultValue="ADMIN"
-                            style={{
-                                width: 250,
-                            }}
-                            onChange={handleChange}
-                            options={[
-                                {
-                                    value: "Admin",
-                                    label: "Admin (Can invite & manage new users)",
-                                },
-                                {
-                                    value: "Member",
-                                    label: "Member (Can add and edit content)",
-                                },
-                            ]}
+                            options={options}
+                            onChange={(value) => handleChange(value)}
                         />
                     </Space>
                 </form>
@@ -71,12 +110,8 @@ function InviteMember() {
                                     required
                                 ></input>
                                 <Space wrap>
-                                    <Select
+                                    <CustomSelect
                                         defaultValue="ADMIN"
-                                        style={{
-                                            width: 150,
-                                        }}
-                                        onChange={handleChange}
                                         options={[
                                             {
                                                 value: "Admin",
@@ -87,6 +122,7 @@ function InviteMember() {
                                                 label: "Member (Can add and edit content)",
                                             },
                                         ]}
+                                        onChange={handleChange}
                                     />
                                 </Space>
                             </form>

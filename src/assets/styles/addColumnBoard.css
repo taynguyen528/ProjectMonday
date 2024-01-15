@@ -320,4 +320,5 @@ h2 {
     display: flex;
     justify-content: center;
     margin: 0 12px;
+    min-width: auto; /* hoặc giảm giá trị min-width */
 }
