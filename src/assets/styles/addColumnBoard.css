@@ -244,12 +244,14 @@ h2 {
 .table {
     overflow: auto;
     margin-left: 32px;
+    overflow-x: auto;
 }
 
 .tableWrap {
     display: flex;
     flex-direction: column;
     gap: 32px;
+    overflow-x: auto;
 }
 .tableWrap .colTable {
     border-bottom-left-radius: 8px;
@@ -261,6 +263,7 @@ h2 {
     gap: 0;
     grid-auto-rows: auto;
     justify-items: center;
+    overflow-x: auto;
 }
 
 .colSubTable {
