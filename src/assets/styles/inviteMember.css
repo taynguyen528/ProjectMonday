@@ -55,6 +55,11 @@ h2 {
     margin-bottom: 10px;
 }
 
+.infoMember {
+    display: flex;
+    justify-content: center;
+}
+
 .infoMember input {
     padding: 15px 20px;
     border-top: 1px solid #c5c7d0;
@@ -67,7 +72,7 @@ h2 {
     border-bottom-left-radius: 4px;
 }
 
-.infoMember select {
+/* .infoMember select {
     padding: 15px 20px;
     border-top: 1px solid #c5c7d0;
     border-right: 1px solid #c5c7d0;
@@ -79,7 +84,7 @@ h2 {
     word-wrap: break-word;
     border-top-right-radius: 4px;
     border-bottom-right-radius: 4px;
-}
+} */
 
 .infoMember select:focus,
 .infoMember input:focus {
@@ -124,4 +129,35 @@ h2 {
 
 .inviteYourTeam:hover {
     background-color: #0060b9;
+}
+
+.ant-select-item-option {
+    padding: 10px 20px !important;
+    color: red;
+    background-color: #f0f0f0;
+    margin-bottom: 5px !important;
+}
+.ant-select-item-option:hover {
+    background-color: #d3e4fc !important;
+}
+
+.ant-select-item-option-selected {
+    background-color: #1890ff;
+    color: #fff;
+}
+
+.ant-select-selection-item {
+    padding: 15px 20px !important;
+}
+
+.ant-select-selector {
+    padding: 15px 20px !important;
+}
+
+:where(.css-dev-only-do-not-override-gzal6t).ant-select-single
+    .ant-select-selector {
+    border-top-right-radius: 4px;
+    border-bottom-right-radius: 4px;
+    border-top-left-radius: 0px;
+    border-bottom-left-radius: 0px;
 }

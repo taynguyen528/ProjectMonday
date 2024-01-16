@@ -10,7 +10,7 @@ import test from "./pages/test";
 function App() {
     return (
         <>
-            <InviteMember></InviteMember>
+            <AddColumnBoard></AddColumnBoard>
             <Routes></Routes>
         </>
     );
