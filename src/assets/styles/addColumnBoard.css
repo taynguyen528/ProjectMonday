@@ -314,11 +314,3 @@ h2 {
 .colSubTable.col-start {
     justify-content: start;
 }
-
-.colSubTable .col-plus {
-    align-items: center;
-    display: flex;
-    justify-content: center;
-    margin: 0 12px;
-    min-width: auto; /* hoặc giảm giá trị min-width */
-}
