@@ -245,75 +245,31 @@ h2 {
     overflow: auto;
     margin-left: 32px;
     overflow-x: auto;
+    width: calc(100% - 24px);
 }
 
-.tableWrap {
-    display: flex;
-    flex-direction: column;
-    gap: 32px;
-    overflow-x: auto;
-}
-.tableWrap .colTable {
-    border-bottom-left-radius: 8px;
-    border-color: #d0d4e4;
-    display: grid;
-    grid-template-columns:
-        170px minmax(auto, 200px) minmax(auto, 200px) minmax(auto, 200px)
-        auto;
-    gap: 0;
-    grid-auto-rows: auto;
-    justify-items: center;
-    overflow-x: auto;
-}
-
-.colSubTable {
-    align-items: center;
-    display: flex;
-    height: 36px;
-    width: 100%;
-}
-
-.colSubTable.col-start {
-    justify-content: start;
-}
-
-.tableWrap .colTable .col-mb-table {
-    margin-bottom: 8px;
-}
-
-.colSubTable.col-separate {
+.content_col {
+    display: block;
+    width: 60%;
+    height: 4px;
+    background: #c3c6d4;
     border-left: 1px solid;
     border-top: 1px solid;
     border-color: #d0d4e4;
     border-bottom-color: #d0d4e4 !important;
+    border-radius: 8px;
     font-size: 14px;
 }
 
-.colSubTable .col-height.MY8RW {
-    width: 70%;
-}
-
-.colSubTable .col-height.col-height-2 {
-    height: 4px;
-}
-
-.colSubTable .col-height {
-    background: #c3c6d4;
-    border-radius: 8px;
-}
-
-.colSubTable .col-height.Gu2z9 {
-    height: 6px;
-}
-
-.colSubTable .col-height.col-width {
+.content_col2 {
+    display: block;
     width: 30%;
-}
-
-.colSubTable.col-center {
-    justify-content: center;
-}
-
-.colSubTable.col-start {
-    justify-content: start;
+    height: 4px;
+    background: #c3c6d4;
+    border-left: 1px solid;
+    border-top: 1px solid;
+    border-color: #d0d4e4;
+    border-bottom-color: #d0d4e4 !important;
+    border-radius: 8px;
+    font-size: 14px;
 }
