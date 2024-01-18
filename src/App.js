@@ -6,7 +6,7 @@ import LastQuestion from "./pages/LastQuestion";
 import InviteMember from "./pages/InviteMember";
 import CreateBoard from "./pages/CreateBoard";
 import AddColumnBoard from "./pages/AddColumnBoard";
-import test from "./pages/test";
+import DemoTable from "./pages/DemoTable";
 function App() {
     return (
         <>

@@ -1,20 +1,9 @@
 import imgLogo from "../assets/img/logoMonday.png";
 import "../assets/styles/addColumnBoard.css";
 import { useState, useEffect } from "react";
+import { Table } from "antd";
 
 function AddColumnBoard() {
-    const [buttonStates, setButtonStates] = useState({
-        Owner: true,
-        Status: true,
-        DueDate: true,
-        TimeLine: false,
-        Priority: false,
-        File: false,
-        Budget: false,
-        Notes: false,
-        LastUpdate: false,
-    });
-
     function getContentForButton(buttonName) {
         switch (buttonName) {
             case "Owner":
@@ -39,6 +28,19 @@ function AddColumnBoard() {
                 return "";
         }
     }
+
+    const customNoDataMessage = () => <span style={{ display: "none" }}></span>;
+    const [buttonStates, setButtonStates] = useState({
+        Owner: true,
+        Status: true,
+        DueDate: true,
+        TimeLine: false,
+        Priority: false,
+        File: false,
+        Budget: false,
+        Notes: false,
+        LastUpdate: false,
+    });
 
     const handleButtonClick = (buttonName) => {
         const activeButtons = Object.keys(buttonStates).filter(
@@ -76,52 +78,204 @@ function AddColumnBoard() {
         if (isButtonActive && activeButtons.length === 1) {
             return;
         }
-
-        const updatedButtons = isButtonActive
-            ? activeButtons.filter((button) => button !== buttonName)
-            : [...activeButtons, buttonName];
-
-        setActiveButtons(updatedButtons);
     };
 
-    // [
-    //     "Owner",
-    //     "Status",
-    //     "Due date",
-    //     "Timeline",
-    //     "Priority",
-    //     "File Budget",
-    //     "Notes",
-    //     "Last Update",
-    // ]
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+    const columns = [
+        {
+            title: "Project",
+            dataIndex: "manager",
+            key: "1",
+            align: "center",
+        },
+        {
+            title: "Owner",
+            dataIndex: "owner",
+            key: "2",
+            align: "center",
+        },
+        {
+            title: "Status",
+            dataIndex: "status",
+            key: "3",
+            align: "center",
+        },
+        {
+            title: "DueDate",
+            dataIndex: "dueDate",
+            key: "4",
+            align: "center",
+        },
+        {
+            title: "TimeLine",
+            dataIndex: "timeLine",
+            key: "5",
+            align: "center",
+        },
+        {
+            title: "Priority",
+            dataIndex: "priority",
+            key: "6",
+            align: "center",
+        },
+        {
+            title: "File",
+            dataIndex: "file",
+            key: "7",
+            align: "center",
+        },
+        {
+            title: "Budget",
+            dataIndex: "budget",
+            key: "8",
+            align: "center",
+        },
+        {
+            title: "Notes",
+            dataIndex: "notes",
+            key: "9",
+            align: "center",
+        },
+        {
+            title: "LastUpdate",
+            dataIndex: "lastUpdate",
+            key: "10",
+            align: "center",
+        },
+    ];
 
-    const [activeButtons, setActiveButtons] = useState([
-        "Owner",
-        "Status",
-        "DueDate",
-    ]);
+    const data = [
+        {
+            key: "1",
+            manager: <span className="line sub"></span>,
+            owner: <span className="avatar"></span>,
+            status: (
+                <span className="status_wrap working-on-it nowrap">
+                    Working on it
+                </span>
+            ),
+            dueDate: (
+                <span className="wrapDueDate">
+                    <span className="danger-level ">
+                        <span className="icon">!</span>
+                    </span>
+                    <span className="deadline not-completed nowrap">2 Jan</span>
+                </span>
+            ),
+            timeLine: (
+                <span className="wrapTimeLine">
+                    <span className="timeLine not-completed nowrap">
+                        <span className="icon">!</span>
+                        <span className="deadline">2 - 3 Jan</span>
+                    </span>
+                </span>
+            ),
+            priority: <span className="wrapPriority low">Low</span>,
+            budget: <span className="wrapBudget">$100</span>,
+            file: <span className="wrapSpan"></span>,
+            notes: <span className="wrapNote nowrap">Action items</span>,
+            lastUpdate: (
+                <span className="wrapLastUpdate nowrap">
+                    <span className="avatar"></span>
+                    <span className="time">2 weeks ago</span>
+                </span>
+            ),
+        },
+        {
+            key: "2",
+            manager: <span className="line sub"></span>,
+            owner: <span className="no_avatar"></span>,
+            status: <span className="status_wrap done nowrap">Done</span>,
+            dueDate: (
+                <span className="wrapDueDate">
+                    <span className="no-danger-level">
+                        <span
+                            className="fa-solid fa-check"
+                            style={{ color: "#fff" }}
+                        ></span>
+                    </span>
+                    <span className="deadline completed">3 Jan</span>
+                </span>
+            ),
+            timeLine: (
+                <span className="wrapTimeLine">
+                    <span className="timeLine completed nowrap">
+                        <span
+                            className="fa-solid fa-check"
+                            style={{ color: "#fff" }}
+                        ></span>
+                        <span className="deadline">3 - 4 Jan</span>
+                    </span>
+                </span>
+            ),
+            priority: <span className="wrapPriority high">High</span>,
+            budget: <span className="wrapBudget">$1000</span>,
+            file: <span className="wrapSpan"></span>,
+            notes: <span className="wrapNote nowrap">Meeting notes</span>,
+            lastUpdate: (
+                <span className="wrapLastUpdate nowrap">
+                    <span className="avatar"></span>
+                    <span className="time">2 weeks ago</span>
+                </span>
+            ),
+        },
+        {
+            key: "3",
+            manager: <span className="line sub"></span>,
+            owner: <span className="no_avatar"></span>,
+            status: <span className="status_wrap stuck nowrap">Stuck</span>,
+            dueDate: (
+                <span className="wrapDueDate">
+                    <span className="danger-level ">
+                        <span className="icon">!</span>
+                    </span>
+                    <span className="deadline not-completed">4 Jan</span>
+                </span>
+            ),
+            timeLine: (
+                <span className="wrapTimeLine">
+                    <span className="timeLine not-completed nowrap">
+                        <span className="icon">!</span>
+                        <span className="deadline">6 - 7 Jan</span>
+                    </span>
+                </span>
+            ),
+            priority: <span className="wrapPriority medium">Medium</span>,
+            budget: <span className="wrapBudget">$500</span>,
+            file: <span className="wrapSpan"></span>,
+            notes: <span className="wrapNote nowrap">Other</span>,
+            lastUpdate: (
+                <span className="wrapLastUpdate nowrap">
+                    <span className="avatar"></span>
+                    <span className="time">2 weeks ago</span>
+                </span>
+            ),
+        },
+    ];
+    // const defaultCheckedList = columns.map((item) => item.key);
+    const defaultCheckedList = [...columns.map((item) => item.key), "ABC"];
+    const [checkedList, setCheckedList] = useState(defaultCheckedList);
+    const options = columns.map(({ key, title }) => ({
+        label: title,
+        value: key,
+    }));
 
-    const generateColumns = () => {
-        const columns = [];
+    const newColumns = columns.map((item) => ({
+        ...item,
+        hidden: item.key !== "ABC" && !checkedList.includes(item.key),
+    }));
 
-        activeButtons.forEach((buttonText, index) => {
-            const columnIndex = index + 2;
-            columns.push(
-                <div
-                    key={columnIndex}
-                    className={`colSubTable col-separate col-center col-${columnIndex}`}
-                >
-                    <button onClick={() => handleButtonClick(buttonText)}>
-                        {buttonText}
-                    </button>
-                </div>
-            );
-        });
-
-        return columns;
-    };
-
-    const gridColumnTemplate = `170px repeat(${activeButtons.length}, minmax(auto, 200px))`;
+    useEffect(() => {
+        const updatedColumns = columns.map((item) => ({
+            ...item,
+            hidden: !buttonStates[item.title],
+        }));
+        setCheckedList(
+            updatedColumns
+                .filter((item) => !item.hidden)
+                .map((item) => item.key)
+        );
+    }, [buttonStates, columns]);
 
     return (
         <>
@@ -397,472 +551,30 @@ function AddColumnBoard() {
                                 <div className="wrapBoard">
                                     <div className="line main"></div>
                                     <div className="table">
-                                        <div className="tableWrap">
-                                            <div
-                                                className="colTable"
-                                                style={{
-                                                    gridTemplateColumns:
-                                                        gridColumnTemplate,
-                                                }}
-                                            >
-                                                <div
-                                                    className="colSubTable col-mb-table u7y_F undefined col-start"
-                                                    style={{
-                                                        gridColumn: "1",
-                                                    }}
-                                                >
-                                                    <div
-                                                        className="col-height MY8RW Gu2z9"
-                                                        style={{
-                                                            background:
-                                                                "rgb(87, 155, 252)",
-                                                        }}
-                                                    ></div>
-                                                </div>
-                                                <div
-                                                    className="colSubTable col-separate col-start"
-                                                    style={{
-                                                        padding: "0px 24px",
-                                                        borderLeft:
-                                                            "6px solid rgb(87, 155, 252)",
-                                                        gridColumn: "1",
-                                                        borderRadius:
-                                                            "8px 0px 0px",
-                                                    }}
-                                                >
-                                                    <div className="col-height MY8RW col-height-2"></div>
-                                                </div>
-                                                {/* <div
-                                                    className="colSubTable col-separate col-center"
-                                                    style={{
-                                                        gridColumn: "2",
-                                                    }}
-                                                >
-                                                    <div className="col-height col-width col-height-2"></div>
-                                                </div>
-                                                <div
-                                                    className="colSubTable col-separate col-center"
-                                                    style={{
-                                                        gridColumn: "3",
-                                                    }}
-                                                >
-                                                    <div className="col-height col-width col-height-2"></div>
-                                                </div>
-                                                <div
-                                                    className="colSubTable col-separate col-center"
-                                                    style={{
-                                                        gridColumn: "4",
-                                                    }}
-                                                >
-                                                    <div className="col-height col-width col-height-2"></div>
-                                                </div> */}
-                                                {generateColumns()}
-                                                <div
-                                                    className="colSubTable col-separate col-start"
-                                                    style={{
-                                                        gridColumn: "5",
-                                                    }}
-                                                >
-                                                    <div className="col-plus">
-                                                        <svg
-                                                            viewBox="0 0 20 20"
-                                                            fill="currentColor"
-                                                            width="16"
-                                                            height="16"
-                                                            aria-hidden="true"
-                                                            className="icon_f5f5ef7fbd"
-                                                            data-testid="icon"
-                                                            style={{
-                                                                color: "#676878",
-                                                            }}
-                                                        >
-                                                            <path
-                                                                d="M10.75 3C10.75 2.58579 10.4142 2.25 10 2.25C9.58579 2.25 9.25 2.58579 9.25 3V9.25H3C2.58579 9.25 2.25 9.58579 2.25 10C2.25 10.4142 2.58579 10.75 3 10.75H9.25V17C9.25 17.4142 9.58579 17.75 10 17.75C10.4142 17.75 10.75 17.4142 10.75 17V10.75H17C17.4142 10.75 17.75 10.4142 17.75 10C17.75 9.58579 17.4142 9.25 17 9.25H10.75V3Z"
-                                                                fill="currentColor"
-                                                                fillRule="evenodd"
-                                                                clipRule="evenodd"
-                                                            ></path>
-                                                        </svg>
-                                                    </div>
+                                        <div className="line_blue"></div>
+                                        <Table
+                                            className="custom-table"
+                                            columns={newColumns}
+                                            dataSource={data}
+                                            pagination={false}
+                                            bordered={true}
+                                            style={{
+                                                marginTop: 24,
+                                            }}
+                                        />
+                                        <div className="line_green"></div>
 
-                                                    <div className="col-height col-width"></div>
-                                                </div>
-                                                {/* Hết Hàng 1 */}
-                                                <div
-                                                    className="colSubTable col-separate col-start"
-                                                    style={{
-                                                        padding: "0px 24px",
-                                                        borderLeft:
-                                                            "6px solid rgb(87, 155, 252)",
-                                                        gridColumn: "1",
-                                                    }}
-                                                >
-                                                    <div className="col-height MY8RW col-height-2"></div>
-                                                </div>
-                                                <div
-                                                    className="colSubTable col-separate col-center"
-                                                    style={{
-                                                        gridColumn: "2",
-                                                    }}
-                                                >
-                                                    <div className="col-height col-width col-height-2"></div>
-                                                </div>
-                                                <div
-                                                    className="colSubTable col-separate col-center"
-                                                    style={{
-                                                        gridColumn: "3",
-                                                    }}
-                                                >
-                                                    <div className="col-height col-width col-height-2"></div>
-                                                </div>
-                                                <div
-                                                    className="colSubTable col-separate col-center"
-                                                    style={{
-                                                        gridColumn: "4",
-                                                    }}
-                                                >
-                                                    <div className="col-height col-width col-height-2"></div>
-                                                </div>
-                                                {/* Thẻ div Plus */}
-                                                <div
-                                                    className="colSubTable col-separate col-center"
-                                                    style={{
-                                                        gridColumn: "5",
-                                                    }}
-                                                >
-                                                    <div className="col-height col-width"></div>
-                                                </div>
-                                                {/* Hết Hàng 2 */}
-                                                <div
-                                                    className="colSubTable col-separate col-start"
-                                                    style={{
-                                                        padding: "0px 24px",
-                                                        borderLeft:
-                                                            "6px solid rgb(87, 155, 252)",
-                                                        gridColumn: "1",
-                                                    }}
-                                                >
-                                                    <div className="col-height MY8RW col-height-2"></div>
-                                                </div>
-                                                <div
-                                                    className="colSubTable col-separate col-center"
-                                                    style={{
-                                                        gridColumn: "2",
-                                                    }}
-                                                >
-                                                    <div className="col-height col-width col-height-2"></div>
-                                                </div>
-                                                <div
-                                                    className="colSubTable col-separate col-center"
-                                                    style={{
-                                                        gridColumn: "3",
-                                                    }}
-                                                >
-                                                    <div className="col-height col-width col-height-2"></div>
-                                                </div>
-                                                <div
-                                                    className="colSubTable col-separate col-center"
-                                                    style={{
-                                                        gridColumn: "4",
-                                                    }}
-                                                >
-                                                    <div className="col-height col-width col-height-2"></div>
-                                                </div>
-                                                <div
-                                                    className="colSubTable col-separate col-center"
-                                                    style={{
-                                                        gridColumn: "5",
-                                                    }}
-                                                >
-                                                    <div className="col-height col-width"></div>
-                                                </div>
-                                                {/* Hết hàng 3 */}
-                                                <div
-                                                    className="colSubTable col-separate col-start"
-                                                    style={{
-                                                        padding: "0px 24px",
-                                                        borderLeft:
-                                                            "6px solid rgb(87, 155, 252)",
-                                                        gridColumn: "1",
-                                                        borderBottom:
-                                                            "1px solid",
-                                                    }}
-                                                >
-                                                    <div className="col-height MY8RW col-height-2"></div>
-                                                </div>
-                                                <div
-                                                    className="colSubTable col-separate col-center"
-                                                    style={{
-                                                        gridColumn: "2",
-                                                        borderBottom:
-                                                            "1px solid",
-                                                    }}
-                                                >
-                                                    <div className="col-height col-width col-height-2"></div>
-                                                </div>
-                                                <div
-                                                    className="colSubTable col-separate col-center"
-                                                    style={{
-                                                        gridColumn: "3",
-                                                        borderBottom:
-                                                            "1px solid",
-                                                    }}
-                                                >
-                                                    <div className="col-height col-width col-height-2"></div>
-                                                </div>
-                                                <div
-                                                    className="colSubTable col-separate col-center"
-                                                    style={{
-                                                        gridColumn: "4",
-                                                        borderBottom:
-                                                            "1px solid",
-                                                    }}
-                                                >
-                                                    <div className="col-height col-width col-height-2"></div>
-                                                </div>
-                                                <div
-                                                    className="colSubTable col-separate col-center"
-                                                    style={{
-                                                        gridColumn: "5",
-                                                        borderBottom:
-                                                            "1px solid",
-                                                    }}
-                                                >
-                                                    <div className="col-height col-width"></div>
-                                                </div>
-                                                {/* Hết hàng 4 */}
-                                                <div
-                                                    className="colSubTable col-separate col-start"
-                                                    style={{
-                                                        padding: "0px 24px",
-                                                        borderLeft:
-                                                            "6px solid rgb(87, 155, 252)",
-                                                        color: "#676879",
-                                                        gridColumn: "1",
-                                                        borderTop: "0px",
-                                                        borderBottom:
-                                                            "1px solid",
-                                                        opacity: "0.5",
-                                                        borderRadius:
-                                                            "0px 0px 0px 8px",
-                                                    }}
-                                                >
-                                                    <div className="col-height MY8RW col-height-2"></div>
-                                                </div>
-                                                <div
-                                                    className="colSubTable col-separate col-center"
-                                                    style={{
-                                                        gridColumn: "2",
-                                                        borderLeft: "unset",
-                                                        borderTop: "0px",
-                                                        borderBottom:
-                                                            "1px solid",
-                                                        opacity: "0.5",
-                                                    }}
-                                                >
-                                                    <div className="col-height col-width"></div>
-                                                </div>
-                                                <div
-                                                    className="colSubTable col-separate col-center"
-                                                    style={{
-                                                        gridColumn: "3",
-                                                        borderLeft: "unset",
-                                                        borderTop: "0px",
-                                                        borderBottom:
-                                                            "1px solid",
-                                                        opacity: "0.5",
-                                                    }}
-                                                >
-                                                    <div className="col-height col-width"></div>
-                                                </div>
-                                                <div
-                                                    className="colSubTable col-separate col-center"
-                                                    style={{
-                                                        gridColumn: "4",
-                                                        borderLeft: "unset",
-                                                        borderTop: "0px",
-                                                        borderBottom:
-                                                            "1px solid",
-                                                        opacity: "0.5",
-                                                    }}
-                                                >
-                                                    <div className="col-height col-width"></div>
-                                                </div>
-                                                <div
-                                                    className="colSubTable col-separate col-center"
-                                                    style={{
-                                                        gridColumn: "5",
-                                                        borderLeft: "unset",
-                                                        borderTop: "0px",
-                                                        borderBottom:
-                                                            "1px solid",
-                                                        opacity: "0.5",
-                                                    }}
-                                                >
-                                                    <div className="col-height col-width"></div>
-                                                </div>
-                                                <div
-                                                    className="colSubTable col-mb-table col-start"
-                                                    style={{
-                                                        gridColumn: "1",
-                                                    }}
-                                                >
-                                                    <div
-                                                        className="col-height MY8RW Gu2z9"
-                                                        style={{
-                                                            background:
-                                                                "rgb(0, 200, 117)",
-                                                        }}
-                                                    ></div>
-                                                </div>
-                                                <div
-                                                    className="colSubTable col-separate col-start"
-                                                    style={{
-                                                        padding: "0px 24px",
-                                                        borderLeft:
-                                                            "6px solid rgb(0, 200, 117)",
-                                                        gridColumn: "1",
-                                                        borderRadius:
-                                                            "8px 0px 0px",
-                                                        borderBottom:
-                                                            "1px solid",
-                                                    }}
-                                                >
-                                                    <div className="col-height MY8RW col-height-2"></div>
-                                                </div>
-                                                <div
-                                                    className="colSubTable col-separate col-center"
-                                                    style={{
-                                                        gridColumn: "2",
-                                                        borderBottom:
-                                                            "1px solid",
-                                                    }}
-                                                >
-                                                    <div className="col-height col-width col-height-2"></div>
-                                                </div>
-                                                <div
-                                                    className="colSubTable col-separate col-center"
-                                                    style={{
-                                                        gridColumn: "3",
-                                                        borderBottom:
-                                                            "1px solid",
-                                                    }}
-                                                >
-                                                    <div className="col-height col-width col-height-2"></div>
-                                                </div>
-                                                <div
-                                                    className="colSubTable col-separate col-center"
-                                                    style={{
-                                                        gridColumn: "4",
-                                                        borderBottom:
-                                                            "1px solid",
-                                                    }}
-                                                >
-                                                    <div className="col-height col-width col-height-2"></div>
-                                                </div>
-                                                <div
-                                                    className="colSubTable col-separate col-start"
-                                                    style={{
-                                                        gridColumn: "5",
-                                                        borderBottom:
-                                                            "1px solid",
-                                                    }}
-                                                >
-                                                    <div className="col-plus">
-                                                        <svg
-                                                            viewBox="0 0 20 20"
-                                                            fill="currentColor"
-                                                            width="16"
-                                                            height="16"
-                                                            aria-hidden="true"
-                                                            className="icon_f5f5ef7fbd"
-                                                            data-testid="icon"
-                                                            style={{
-                                                                color: "#676878",
-                                                            }}
-                                                        >
-                                                            <path
-                                                                d="M10.75 3C10.75 2.58579 10.4142 2.25 10 2.25C9.58579 2.25 9.25 2.58579 9.25 3V9.25H3C2.58579 9.25 2.25 9.58579 2.25 10C2.25 10.4142 2.58579 10.75 3 10.75H9.25V17C9.25 17.4142 9.58579 17.75 10 17.75C10.4142 17.75 10.75 17.4142 10.75 17V10.75H17C17.4142 10.75 17.75 10.4142 17.75 10C17.75 9.58579 17.4142 9.25 17 9.25H10.75V3Z"
-                                                                fill="currentColor"
-                                                                fillRule="evenodd"
-                                                                clipRule="evenodd"
-                                                            ></path>
-                                                        </svg>
-                                                    </div>
-                                                    <div className="col-height col-width"></div>
-                                                </div>
-                                                <div
-                                                    className="colSubTable col-separate col-start"
-                                                    style={{
-                                                        padding: "0px 24px",
-                                                        borderLeft:
-                                                            "6px solid rgb(0, 200, 117)",
-                                                        color: "var(--placeholder-color)",
-                                                        gridColumn: "1",
-                                                        borderTop: "0px",
-                                                        borderBottom:
-                                                            "1px solid",
-                                                        opacity: "0.5",
-                                                        borderRadius:
-                                                            "0px 0px 0px 8px",
-                                                    }}
-                                                >
-                                                    <div className="col-height MY8RW col-height-2"></div>
-                                                </div>
-                                                <div
-                                                    className="colSubTable col-separate col-center"
-                                                    style={{
-                                                        gridColumn: "2",
-                                                        borderLeft: "unset",
-                                                        borderTop: "0px",
-                                                        borderBottom:
-                                                            "1px solid",
-                                                        opacity: "0.5",
-                                                    }}
-                                                >
-                                                    <div className="col-height col-width"></div>
-                                                </div>
-                                                <div
-                                                    className="colSubTable col-separate col-center"
-                                                    style={{
-                                                        gridColumn: "3",
-                                                        borderLeft: "unset",
-                                                        borderTop: "0px",
-                                                        borderBottom:
-                                                            "1px solid",
-                                                        opacity: "0.5",
-                                                    }}
-                                                >
-                                                    <div className="col-height col-width"></div>
-                                                </div>
-                                                <div
-                                                    className="colSubTable col-separate col-center"
-                                                    style={{
-                                                        gridColumn: "4",
-                                                        borderLeft: "unset",
-                                                        borderTop: "0px",
-                                                        borderBottom:
-                                                            "1px solid",
-                                                        opacity: "0.5",
-                                                    }}
-                                                >
-                                                    <div className="col-height col-width"></div>
-                                                </div>
-                                                <div
-                                                    className="colSubTable col-separate col-center"
-                                                    style={{
-                                                        gridColumn: "5",
-                                                        borderLeft: "unset",
-                                                        borderTop: "0px",
-                                                        borderBottom:
-                                                            "1px solid",
-                                                        opacity: "0.5",
-                                                    }}
-                                                >
-                                                    <div className="col-height col-width"></div>
-                                                </div>
-                                            </div>
-                                        </div>
+                                        <Table
+                                            className="custom-table"
+                                            columns={newColumns}
+                                            pagination={false}
+                                            style={{
+                                                marginTop: 24,
+                                            }}
+                                            locale={{
+                                                emptyText: customNoDataMessage,
+                                            }}
+                                        />
                                     </div>
                                 </div>
                             </div>

@@ -1,6 +1,7 @@
 import imgLogo from "../assets/img/logoMonday.png";
 import "../assets/styles/CreateBoard.css";
 import { React, useState } from "react";
+import { Table } from "antd";
 
 function CreateBoard() {
     const handleBoardNameChange = () => {
@@ -28,6 +29,50 @@ function CreateBoard() {
             lineMain.style.width = "";
         }
     };
+
+    const columns = [
+        {
+            title: <span className="content_col"></span>,
+            dataIndex: "content",
+            key: "1",
+        },
+        {
+            title: <span className="content_col"></span>,
+            dataIndex: "content",
+            key: "2",
+        },
+        {
+            title: <span className="content_col"></span>,
+            dataIndex: "content",
+            key: "3",
+        },
+    ];
+
+    const data = [
+        {
+            key: "",
+            content: <span className="content_col2"></span>,
+        },
+        {
+            key: "",
+            content: <span className="content_col2"></span>,
+        },
+        {
+            key: "",
+            content: <span className="content_col2"></span>,
+        },
+    ];
+    const defaultCheckedList = columns.map((item) => item.key);
+
+    const [checkedList, setCheckedList] = useState(defaultCheckedList);
+    const options = columns.map(({ key, title }) => ({
+        label: title,
+        value: key,
+    }));
+    const newColumns = columns.map((item) => ({
+        ...item,
+        hidden: !checkedList.includes(item.key),
+    }));
 
     return (
         <>
@@ -71,6 +116,16 @@ function CreateBoard() {
                                     <div className="wrapBoard">
                                         <div className="line main"></div>
                                         <div className="table">
+                                            <Table
+                                                columns={newColumns}
+                                                dataSource={data}
+                                                pagination={false}
+                                                style={{
+                                                    marginTop: 24,
+                                                }}
+                                            />
+                                        </div>
+                                        {/* <div className="table">
                                             <div className="tableWrap">
                                                 <div
                                                     className="colTable"
@@ -533,7 +588,7 @@ function CreateBoard() {
                                                     </div>
                                                 </div>
                                             </div>
-                                        </div>
+                                        </div> */}
                                     </div>
                                 </div>
                             </div>
