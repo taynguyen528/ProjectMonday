@@ -1,9 +1,28 @@
 import imgLogo from "../assets/img/logoMonday.png";
 import "../assets/styles/addColumnBoard.css";
+import { useNavigate, useLocation } from "react-router-dom";
+import ButtonContinue from "../components/ButtonContinue";
+import ButtonBack from "../components/ButtonBack";
+
 import { useState, useEffect } from "react";
 import { Table } from "antd";
 
 function AddColumnBoard() {
+    const { state } = useLocation();
+    const boardName = state && state.boardName;
+    const navigate = useNavigate();
+    const handleBack = () => {
+        navigate("/CreateBoard");
+    };
+    const handleNext = () => {
+        const activeColumns = columns.filter(
+            (column) => buttonStates[column.title]
+        );
+        navigate("/SelectItemManage", {
+            state: { activeColumns, checkedList, boardName },
+        });
+    };
+
     function getContentForButton(buttonName) {
         switch (buttonName) {
             case "Owner":
@@ -530,14 +549,10 @@ function AddColumnBoard() {
 
                         <div className="explain"></div>
                         <div className="groupBtnAct">
-                            <div className="back">
-                                <i class="fa-solid fa-chevron-left"></i>
-                                <button>Back</button>
-                            </div>
-                            <div className="btn-next">
-                                <button>Next</button>
-                                <i className="fa-solid fa-chevron-right"></i>
-                            </div>
+                            <ButtonBack onClick={handleBack}></ButtonBack>
+                            <ButtonContinue
+                                onClick={handleNext}
+                            ></ButtonContinue>
                         </div>
                     </div>
                 </div>
@@ -549,7 +564,9 @@ function AddColumnBoard() {
                             </button>
                             <div className="board">
                                 <div className="wrapBoard">
-                                    <div className="line main"></div>
+                                    <div className="new-line-main">
+                                        {boardName}
+                                    </div>
                                     <div className="table">
                                         <div className="line_blue"></div>
                                         <Table

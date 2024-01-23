@@ -1,9 +1,14 @@
 import "../assets/styles/signup.css";
-// import "../assets/styles/responsive.css";
+import { useNavigate } from "react-router-dom";
 import imgSignup from "../assets/img/img-signup.png";
 import icGoogle from "../assets/img/ic-google.png";
 
 function SignUp() {
+    const navigate = useNavigate();
+
+    const handleNext = () => {
+        navigate("./CreateAccount");
+    };
     return (
         <>
             <main className="signup">
@@ -37,7 +42,9 @@ function SignUp() {
                             placeholder="name@company.com"
                             className="email"
                         ></input>
-                        <button className="btn-continue">Continue</button>
+                        <button className="btn-continue" onClick={handleNext}>
+                            Continue
+                        </button>
                     </form>
 
                     <div className="sign__note">

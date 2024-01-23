@@ -3,8 +3,14 @@ import imgLogo from "../assets/img/logoMonday.png";
 import imgInvite from "../assets/img/invite_member.png";
 import { React, useState } from "react";
 import { Select, Space } from "antd";
+import { useNavigate } from "react-router-dom";
 
 function InviteMember() {
+    const navigate = useNavigate();
+
+    const handelButtonRemindMeLater = () => {
+        navigate("/CreateBoard");
+    };
     const [formCount, setFormCount] = useState(1);
 
     const handleAddAnotherClick = () => {
@@ -137,7 +143,10 @@ function InviteMember() {
                         </button>
 
                         <div className="btn-act">
-                            <button className="remindMeLater">
+                            <button
+                                className="remindMeLater"
+                                onClick={handelButtonRemindMeLater}
+                            >
                                 Remind me later
                             </button>
                             <button className="inviteYourTeam">
