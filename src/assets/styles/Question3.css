@@ -1,0 +1,73 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap");
+
+@import "@fortawesome/fontawesome-free/css/all.css";
+
+body {
+    font-family: "Poppins", sans-serif;
+}
+
+h1 {
+    font-size: 32px;
+    color: #000;
+    font-weight: 500;
+}
+
+h2 {
+    font-size: 16px;
+    color: #000;
+    font-weight: 400;
+}
+.question3Page {
+    display: flex;
+    justify-content: space-between;
+}
+
+.imgQuestion3 {
+    width: 100%;
+    height: 100vh;
+    object-fit: cover;
+}
+
+.question3Content {
+    width: 700px;
+    display: flex;
+    flex-direction: column;
+    margin: auto auto;
+}
+
+.question3Content .question {
+    margin: 100px 0;
+}
+
+.question3Content .question h1,
+.question3Content .question h2 {
+    margin-bottom: 30px;
+}
+
+.imgLogo {
+    width: 30%;
+    object-fit: cover;
+}
+
+.question3Page .question {
+    display: flex;
+    flex-direction: column;
+}
+
+.wrapForm {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.group_action {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.wrapFormQuestion3 form {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}

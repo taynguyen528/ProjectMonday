@@ -1,7 +1,18 @@
 import "../assets/styles/signup.css";
 import imgSignup2 from "../assets/img/img-signup-2.png";
 import imgLogo from "../assets/img/logoMonday.png";
+import { useNavigate } from "react-router-dom";
+import ButtonContinue from "../components/ButtonContinue";
+import ButtonBack from "../components/ButtonBack";
+
 function LastQuestion() {
+    const navigate = useNavigate();
+    const handleNext = () => {
+        navigate("/InviteMember");
+    };
+    const handleBack = () => {
+        navigate("/Question2");
+    };
     return (
         <>
             <div className="questionPage">
@@ -146,13 +157,14 @@ function LastQuestion() {
                                 </div>
                             </form>
                         </div>
-                        <div className="btn_back">
-                            <i class="fa-solid fa-chevron-left"></i>
-                            <button>Back</button>
-                        </div>
-                        <div className="btn_continue">
-                            <button>Continue</button>
-                            <i className="fa-solid fa-chevron-right"></i>
+                        <div
+                            className="group_action"
+                            style={{ marginTop: "100px" }}
+                        >
+                            <ButtonBack onClick={handleBack}></ButtonBack>
+                            <ButtonContinue
+                                onClick={handleNext}
+                            ></ButtonContinue>
                         </div>
                     </div>
                     <div className="signup__img">

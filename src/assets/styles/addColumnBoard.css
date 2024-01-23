@@ -50,12 +50,13 @@ h2 {
     align-items: center;
     gap: 10px;
     padding: 10px 20px;
-    border: 2px solid #c3c6d4;
+    border: 3px solid #c3c6d4;
     border-radius: 4px;
     transition: 0.5s all;
 }
 .groupButton button.active {
     border-color: #0073ea;
+    box-shadow: 0 0 5px rgba(0, 115, 234, 0.8);
 }
 
 .groupButton button:not(.active) {
@@ -116,7 +117,7 @@ h2 {
 
 .explain {
     width: 100%;
-    border-radius: 4px;
+    border-radius: 8px;
     background-color: #f6f7fb;
     margin: 20px 0;
     padding: 15px 20px;
@@ -241,6 +242,14 @@ h2 {
     margin-bottom: 70px;
 }
 
+.new-line-main {
+    margin: 12px 0px;
+    margin-left: 32px;
+    font-size: 32px;
+    color: #676879;
+    background-color: transparent;
+}
+
 .table {
     overflow: auto;
     margin-left: 32px;
@@ -272,4 +281,195 @@ h2 {
     border-bottom-color: #d0d4e4 !important;
     border-radius: 8px;
     font-size: 14px;
+}
+
+.custom-table .ant-table-bordered .ant-table-cell {
+    border-right: 1px solid #e8e8e8;
+}
+.custom-table .ant-table-tbody > tr > td {
+    height: 100%;
+}
+
+.content_col {
+    display: block;
+    width: 60%;
+    height: 4px;
+    background: #c3c6d4;
+    border-left: 1px solid;
+    border-top: 1px solid;
+    border-color: #d0d4e4;
+    border-bottom-color: #d0d4e4 !important;
+    border-radius: 8px;
+    font-size: 14px;
+}
+
+.content_col2 {
+    display: block;
+    width: 30%;
+    height: 4px;
+    background: #c3c6d4;
+    border-left: 1px solid;
+    border-top: 1px solid;
+    border-color: #d0d4e4;
+    border-bottom-color: #d0d4e4 !important;
+    border-radius: 8px;
+    font-size: 14px;
+}
+
+.avatar {
+    display: inline-block;
+    background-image: url(../img/uifaces-popular-image.jpg);
+    background-position: center;
+    background-size: cover;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+}
+
+.no_avatar {
+    display: inline-block;
+    background-image: url(https://cdn.monday.com/icons/dapulse-person-column.svg);
+    background-position: center;
+    background-size: cover;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+}
+.status_wrap {
+    color: #fff;
+    font-size: 20px;
+    padding: 10px 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.working-on-it {
+    background-color: #f6be6b;
+}
+.done {
+    background-color: #51d192;
+}
+.stuck {
+    background-color: #c7364c;
+}
+
+.wrapDueDate {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.wrapDueDate .icon,
+.wrapDueDate .deadline {
+    font-size: 20px;
+}
+
+.icon {
+    color: #fff;
+}
+
+.deadline {
+    margin-left: 30px;
+}
+
+.nowrap {
+    white-space: nowrap;
+}
+
+.danger-level {
+    width: 24px;
+    height: 24px;
+    background-color: red;
+    border-radius: 50%;
+    line-height: 24px;
+}
+
+.no-danger-level {
+    width: 24px;
+    height: 24px;
+    background-color: #25844e;
+    border-radius: 50%;
+    line-height: 24px;
+}
+
+.wrapDueDate .completed {
+    text-decoration: line-through;
+    opacity: 0.9;
+}
+
+.wrapTimeLine .timeLine.not-completed {
+    display: inline-block;
+    background-color: red;
+    width: 100%;
+    padding: 10px;
+    border-radius: 999px;
+    color: #fff;
+    font-size: 20px;
+    line-height: 20px;
+}
+
+.wrapTimeLine .timeLine.completed {
+    display: inline-block;
+    background-color: #25844e;
+    width: 100%;
+    padding: 10px;
+    border-radius: 999px;
+    color: #fff;
+    font-size: 20px;
+    line-height: 20px;
+}
+
+.wrapPriority {
+    color: #fff;
+    padding: 10px 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 20px;
+}
+
+.wrapPriority.low {
+    background-color: #84aefa;
+}
+
+.wrapPriority.high {
+    background-color: #6745a7;
+}
+
+.wrapPriority.medium {
+    background-color: #7c7ae2;
+}
+
+.wrapBudget,
+.wrapNote,
+.time {
+    font-size: 20px;
+}
+
+.wrapLastUpdate {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    justify-content: center;
+}
+
+.line_blue {
+    background-color: rgb(87, 155, 252);
+    width: 15%;
+    height: 6px;
+    border-radius: 4px;
+}
+
+.line_green {
+    margin-top: 30px;
+    background-color: rgb(0, 200, 117);
+    width: 15%;
+    height: 6px;
+    border-radius: 4px;
+}
+
+.line.sub {
+    height: 4px;
+    margin: 12px 0px;
+    margin-left: 32px;
 }

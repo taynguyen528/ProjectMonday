@@ -1,0 +1,8 @@
+.InputComponent {
+    display: inline-flex;
+    align-items: center;
+    border-radius: 999px;
+    border: 1px solid #c3c6d4;
+    padding: 10px 15px;
+    color: black;
+}
