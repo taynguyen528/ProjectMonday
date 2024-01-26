@@ -3,36 +3,36 @@
 @import "@fortawesome/fontawesome-free/css/all.css";
 
 body {
-    font-family: "Poppins", sans-serif;
+  font-family: "Poppins", sans-serif;
 }
 
 h1 {
-    font-size: 32px;
-    color: #000;
-    font-weight: 500;
+  font-size: 32px;
+  color: #000;
+  font-weight: 500;
 }
 
 h2 {
-    font-size: 16px;
-    color: #000;
-    font-weight: 400;
+  font-size: 16px;
+  color: #000;
+  font-weight: 400;
 }
 
 .signup {
-    display: flex;
-    align-items: center;
+  display: flex;
+  align-items: center;
 }
 
 .signup__content {
-    width: 60%;
-    margin: 0 auto;
+  width: 60%;
+  margin: 0 auto;
 }
 
 .signup__img img {
-    width: 100%;
-    height: auto;
-    max-width: 100%;
-    display: block;
+  width: 100%;
+  height: auto;
+  max-width: 100%;
+  display: block;
 }
 
 .google-login-button,
@@ -40,375 +40,385 @@ h2 {
 form .btn-continue,
 .backLogin,
 .sign__note {
-    width: 100%;
-    max-width: 400px;
-    margin: 10px auto;
+  width: 100%;
+  max-width: 400px;
+  margin: 10px auto;
 }
 
 .signup__content {
 }
 
 .signup__title {
-    text-align: center;
+  text-align: center;
 }
 
 .signup__img img {
-    height: 100vh;
+  height: 100vh;
 }
 
 .signup__google {
-    text-align: center;
+  text-align: center;
 }
 
 .google-login-button {
-    width: 400px;
-    background-color: #fff;
-    color: #333;
-    border: 1px solid #c3c6d4;
-    border-radius: 4px;
-    padding: 10px 15px;
-    font-size: 20px;
-    cursor: pointer;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-weight: 400;
-    margin: 50px auto 0;
-    transition: 0.5s all;
+  width: 400px;
+  background-color: #fff;
+  color: #333;
+  border: 1px solid #c3c6d4;
+  border-radius: 4px;
+  padding: 10px 15px;
+  font-size: 20px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 400;
+  margin: 50px auto 0;
+  transition: 0.5s all;
 }
 
 .google-login-button:hover {
-    background-color: #dcdfec;
+  background-color: #dcdfec;
 }
 
 .google-icon {
-    width: 30px;
-    height: 30px;
-    margin-right: 10px;
+  width: 30px;
+  height: 30px;
+  margin-right: 10px;
 }
 
 .separate {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin: 15px 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 15px 0;
 }
 
 .separate__hori {
-    width: 180px;
-    height: 1px;
-    background-color: black;
+  width: 180px;
+  height: 1px;
+  background-color: black;
 }
 
 .separate__text {
-    margin: 0 10px;
-    color: black;
-    font-weight: 500;
+  margin: 0 10px;
+  color: black;
+  font-weight: 500;
 }
 
 .email {
-    border: 1px solid #c3c6d4;
-    width: 400px;
-    border-radius: 4px;
-    padding: 10px 15px;
-    outline: none;
-    display: block;
-    margin: 0 auto;
+  border: 1px solid #c3c6d4;
+  width: 400px;
+  border-radius: 4px;
+  padding: 10px 15px;
+  outline: none;
+  display: block;
+  margin: 0 auto;
 }
 
 form .btn-continue {
-    margin-top: 20px;
-    background-color: #0073ea;
-    width: 400px;
-    padding: 10px 15px;
-    border-radius: 4px;
-    transition: 0.5s all;
-    margin: 20px auto 0;
-    display: block;
-    color: #fff;
+  margin-top: 20px;
+  background-color: #0073ea;
+  width: 400px;
+  padding: 10px 15px;
+  border-radius: 4px;
+  transition: 0.5s all;
+  margin: 20px auto 0;
+  display: block;
+  color: #fff;
 }
 
 form .btn-continue:hover {
-    background-color: #0060b9;
+  background-color: #0060b9;
 }
 
 .backLogin,
 .sign__note {
-    width: 400px;
-    margin: 20px auto 0;
-    text-align: center;
+  width: 400px;
+  margin: 20px auto 0;
+  text-align: center;
 }
 .backLogin a,
 .sign__note a {
-    color: #0073ea;
+  color: #0073ea;
 }
 
 .backLogin a:hover,
 .sign__note a:hover {
-    text-decoration: underline;
+  text-decoration: underline;
 }
 
 .backLogin {
-    margin-top: 200px;
+  margin-top: 200px;
 }
 
 /* Create your account */
 .createAccount {
-    display: flex;
-    justify-content: space-between;
+  display: flex;
+  justify-content: space-between;
 }
 
 .info {
-    width: 60%;
+  width: 60%;
 }
 
 .createAccount form input {
-    width: 750px;
-    padding: 15px 15px;
-    outline: none;
-    border: 1px solid #c3c6d4;
-    border-radius: 4px;
+  width: 750px;
+  padding: 15px 15px;
+  outline: none;
+  border: 1px solid #c3c6d4;
+  border-radius: 4px;
 }
 
 .createAccount form input {
-    margin-bottom: 30px;
-    margin-top: 10px;
+  margin-bottom: 30px;
+  margin-top: 10px;
 }
 .createAccount form label {
-    color: #323338;
+  color: #323338;
 }
 
 .createAccount .info h2 {
-    color: #323338;
-    font-size: 32px;
-    font-weight: 500;
-    margin: 60px 0 30px 0;
+  color: #323338;
+  font-size: 32px;
+  font-weight: 500;
+  margin: 60px 0 30px 0;
 }
 
 .createAccount .info img {
-    font-size: 30px;
+  font-size: 30px;
 }
 
 .info__wrap {
-    position: relative;
-    width: 750px;
-    margin: 0 auto;
-    margin-top: 100px;
+  position: relative;
+  width: 750px;
+  margin: 0 auto;
+  margin-top: 100px;
 }
 
 .act_btn {
-    position: absolute;
-    display: inline-flex;
-    gap: 10px;
-    align-items: center;
-    color: #fff;
-    background-color: #0073ea;
-    padding: 10px 25px;
-    border-radius: 4px;
-    transition: 0.5s all;
-    right: 0;
-    bottom: -200px;
+  position: absolute;
+  display: inline-flex;
+  gap: 10px;
+  align-items: center;
+  color: #fff;
+  background-color: #0073ea;
+  padding: 10px 25px;
+  border-radius: 4px;
+  transition: 0.5s all;
+  right: 0;
+  bottom: -200px;
 }
 
 .act_btn:hover {
-    background-color: #0060b9;
+  background-color: #0060b9;
 }
 
 /* Question  */
 .question {
-    position: relative;
-    display: flex;
-    justify-content: space-between;
+  position: relative;
+  display: flex;
+  justify-content: space-between;
 }
 .answerBlock h1,
 .questionBlock h1 {
-    margin-bottom: 20px;
+  margin-bottom: 20px;
 }
 
 .question__wrap {
-    width: 750px;
-    margin: 0 auto;
-    margin-top: 100px;
+  width: 750px;
+  margin: 0 auto;
+  margin-top: 100px;
 }
 
 .question__wrap form {
-    display: flex;
-    gap: 40px;
+  display: flex;
+  gap: 40px;
 }
 
 .wrapInput {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    border-radius: 30px;
-    border: 1px solid #c3c6d4;
-    padding: 10px 15px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  border-radius: 30px;
+  border: 1px solid #c3c6d4;
+  padding: 10px 15px;
 }
 
 .wrapInput label {
-    color: #c3c6d4;
-    cursor: pointer;
+  color: #c3c6d4;
+  cursor: pointer;
 }
 
 input[type="radio"] {
-    display: none;
+  display: none;
 }
 
 input[type="radio"] + label {
-    position: relative;
-    padding-left: 35px;
-    cursor: pointer;
+  position: relative;
+  padding-left: 35px;
+  cursor: pointer;
 }
 
 input[type="radio"] + label:before {
-    content: "";
-    position: absolute;
-    left: 0;
-    top: -1px;
-    width: 25px;
-    height: 25px;
-    border: 1px solid #c3c6d4;
-    border-radius: 50%;
+  content: "";
+  position: absolute;
+  left: 0;
+  top: -1px;
+  width: 25px;
+  height: 25px;
+  border: 1px solid #c3c6d4;
+  border-radius: 50%;
 }
 
 input[type="radio"]:checked + label:before {
-    background: #0073ea;
+  background: #0073ea;
 }
 
 input[type="radio"]:checked + label:after {
-    content: "";
-    position: absolute;
-    top: 4px;
-    left: 6px;
-    width: 14px;
-    height: 14px;
-    border-radius: 50%;
-    background-color: #fff;
+  content: "";
+  position: absolute;
+  top: 4px;
+  left: 6px;
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background-color: #fff;
 }
 
 .answerBlock form {
-    display: flex;
-    align-items: center;
-    flex-wrap: wrap;
-    gap: 20px;
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 20px;
 }
 
 .answerBlock {
-    margin-top: 50px;
+  margin-top: 50px;
 }
 
 .question__wrap {
-    position: relative;
+  position: relative;
 }
 
 .btn_continue {
-    position: absolute;
-    margin-top: 20px;
-    display: inline-flex;
-    gap: 10px;
-    align-items: center;
-    color: #fff;
-    background-color: #0073ea;
-    padding: 10px 25px;
-    border-radius: 4px;
-    transition: 0.5s all;
-    right: 0;
-    bottom: 100px;
+  position: absolute;
+  margin-top: 20px;
+  display: inline-flex;
+  gap: 10px;
+  align-items: center;
+  color: #fff;
+  background-color: #0073ea;
+  padding: 10px 25px;
+  border-radius: 4px;
+  transition: 0.5s all;
+  right: 0;
+  bottom: 100px;
 }
 
 .btn_back {
-    position: absolute;
-    margin-top: 20px;
-    display: inline-flex;
-    gap: 10px;
-    align-items: center;
-    color: #fff;
-    background-color: #fff;
-    padding: 10px 25px;
-    border-radius: 4px;
-    transition: 0.5s all;
-    bottom: 100px;
-    color: #323338;
-    border: 1px solid #c3c6d4;
+  position: absolute;
+  margin-top: 20px;
+  display: inline-flex;
+  gap: 10px;
+  align-items: center;
+  color: #fff;
+  background-color: #fff;
+  padding: 10px 25px;
+  border-radius: 4px;
+  transition: 0.5s all;
+  bottom: 100px;
+  color: #323338;
+  border: 1px solid #c3c6d4;
 }
 
 .btn_back:hover {
-    background-color: #dcdfec;
-    cursor: pointer;
+  background-color: #dcdfec;
+  cursor: pointer;
 }
 
 .btn_continue:hover {
-    background-color: #0060b9;
-    cursor: pointer;
+  background-color: #0060b9;
+  cursor: pointer;
 }
 
 .question__wrap img {
-    margin-bottom: 100px;
+  margin-bottom: 100px;
 }
+
+.question__wrap img.imgLastQuestion {
+  margin-bottom: 0px !important;
+}
+
 input[type="checkbox"] {
-    appearance: none;
-    width: 20px;
-    height: 20px;
-    border: 2px solid #ccc;
-    border-radius: 4px;
-    background-color: #fff;
-    outline: none;
-    cursor: pointer;
-    position: relative;
+  appearance: none;
+  width: 20px;
+  height: 20px;
+  border: 2px solid #ccc;
+  border-radius: 4px;
+  background-color: #fff;
+  outline: none;
+  cursor: pointer;
+  position: relative;
 }
 
 input[type="checkbox"]:checked {
-    background-color: #0073ea;
-    border-color: #0073ea;
+  background-color: #0073ea;
+  border-color: #0073ea;
 }
 
 input[type="checkbox"]::before {
-    content: "";
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%) rotate(45deg);
-    width: 5px;
-    height: 10px;
-    border: solid #fff;
-    border-width: 0 2px 2px 0;
-    opacity: 0;
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) rotate(45deg);
+  width: 5px;
+  height: 10px;
+  border: solid #fff;
+  border-width: 0 2px 2px 0;
+  opacity: 0;
 }
 
 input[type="checkbox"]:checked::before {
-    opacity: 1;
+  opacity: 1;
 }
 
 .custom-btn-continue {
-    position: absolute;
-    margin-top: 50px;
-    display: inline-flex !important;
-    align-items: center;
-    justify-content: center;
-    background-color: #0073ea;
-    color: #fff;
-    font-size: 20px;
-    padding: 20px;
-    gap: 10px;
-    bottom: 150px;
-    left: 50%;
+  position: absolute;
+  margin-top: 50px;
+  display: inline-flex !important;
+  align-items: center;
+  justify-content: center;
+  background-color: #0073ea;
+  color: #fff;
+  font-size: 20px;
+  padding: 20px;
+  gap: 10px;
+  bottom: 150px;
+  left: 50%;
 }
 
 .custom-btn {
-    display: inline-flex !important;
-    align-items: center;
-    justify-content: center;
-    font-size: 20px;
-    padding: 20px;
-    gap: 10px;
-    border-color: #c3c6d4;
-    border: 1px solid #c3c6d4;
+  display: inline-flex !important;
+  align-items: center;
+  justify-content: center;
+  font-size: 20px;
+  padding: 20px;
+  gap: 10px;
+  border-color: #c3c6d4;
+  border: 1px solid #c3c6d4;
 }
 .hover-btn-continue,
 .hover-btn-back {
-    transition: 0.5s all;
+  transition: 0.5s all;
 }
 .hover-btn-back:hover {
-    background-color: #dcdfec;
-    border-color: #c3c6d4;
+  background-color: #dcdfec;
+  border-color: #c3c6d4;
+}
+
+.wrapBtn {
+  display: flex;
+  justify-content: flex-end;
 }
